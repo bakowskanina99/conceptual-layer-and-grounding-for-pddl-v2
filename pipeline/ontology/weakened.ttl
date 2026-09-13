@@ -1,0 +1,113 @@
+@prefix store: <http://example.org/store#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+## Same datatype properties as Part A, EXCEPT category/foodType/
+## produceType are omitted entirely (the agent cannot observe what
+## it is never told exists as a feature — see agent_prompts_ABCD.md,
+## "Ontology JSON (Variant D — weakened)")
+#################################################################
+
+store:price                 a owl:DatatypeProperty ; rdfs:domain store:StoreItem ;      rdfs:range xsd:float .
+store:aisleLocation         a owl:DatatypeProperty ; rdfs:domain store:StoreItem ;      rdfs:range xsd:string .
+store:inStock                a owl:DatatypeProperty ; rdfs:domain store:StoreItem ;      rdfs:range xsd:boolean .
+store:expiryDate             a owl:DatatypeProperty ; rdfs:domain store:GroceryItem ;    rdfs:range xsd:dateTime .
+store:isVegan                a owl:DatatypeProperty ; rdfs:domain store:GroceryItem ;    rdfs:range xsd:boolean .
+store:calories                a owl:DatatypeProperty ; rdfs:domain store:GroceryItem ;    rdfs:range xsd:integer .
+store:allergens               a owl:DatatypeProperty ; rdfs:domain store:GroceryItem ;    rdfs:range xsd:string .
+store:requiresRefrigeration  a owl:DatatypeProperty ; rdfs:domain store:GroceryItem ;    rdfs:range xsd:boolean .
+store:isOrganic              a owl:DatatypeProperty ; rdfs:domain store:FreshProduce ;   rdfs:range xsd:boolean .
+store:weight                  a owl:DatatypeProperty ; rdfs:domain store:FreshProduce ;   rdfs:range xsd:float .
+store:sugarContent           a owl:DatatypeProperty ; rdfs:domain store:Fruit ;          rdfs:range xsd:float .
+store:ingredientsList        a owl:DatatypeProperty ; rdfs:domain store:PackagedFood ;   rdfs:range xsd:string .
+store:shelfStable            a owl:DatatypeProperty ; rdfs:domain store:PackagedFood ;   rdfs:range xsd:boolean .
+store:lactoseFree            a owl:DatatypeProperty ; rdfs:domain store:DairyProduct ;   rdfs:range xsd:boolean .
+store:cutType                 a owl:DatatypeProperty ; rdfs:domain store:MeatProduct ;    rdfs:range xsd:string .
+store:isHazardous            a owl:DatatypeProperty ; rdfs:domain store:HouseholdItem ;  rdfs:range xsd:boolean .
+store:volume                  a owl:DatatypeProperty ; rdfs:domain store:HouseholdItem ;  rdfs:range xsd:float .
+store:size                    a owl:DatatypeProperty ; rdfs:domain store:ClothingItem ;   rdfs:range xsd:string .
+store:material                a owl:DatatypeProperty ; rdfs:domain store:ClothingItem ;   rdfs:range xsd:string .
+store:warrantyMonths         a owl:DatatypeProperty ; rdfs:domain store:ElectronicsItem ; rdfs:range xsd:integer .
+store:voltage                 a owl:DatatypeProperty ; rdfs:domain store:ElectronicsItem ; rdfs:range xsd:float .
+
+#################################################################
+## Part A3 additions -- same rationale as well_formed.ttl: needed so
+## the Stage 1b-synthesized veganAttributeMatch triple (derived from
+## the agent's is_vegan, identically for every variant) is a declared
+## property under this ontology too. Not part of the ablation's
+## single-axis modification -- category/foodType/produceType remain
+## the only discriminating features removed (see Part A2 note below).
+#################################################################
+
+store:veganAttributeMatch    a owl:DatatypeProperty ; rdfs:domain store:GroceryItem ;    rdfs:range xsd:integer .
+store:nutriscoreMatch        a owl:DatatypeProperty ; rdfs:domain store:GroceryItem ;    rdfs:range xsd:integer .
+
+#################################################################
+## Classes — contracts stripped of discriminating requirements
+#################################################################
+
+store:StoreItem a owl:Class .
+
+store:GroceryItem a owl:Class ; rdfs:subClassOf store:StoreItem ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( store:StoreItem ) ] .
+
+store:HouseholdItem a owl:Class ; rdfs:subClassOf store:StoreItem ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( store:StoreItem ) ] .
+
+store:ClothingItem a owl:Class ; rdfs:subClassOf store:StoreItem ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( store:StoreItem ) ] .
+
+store:ElectronicsItem a owl:Class ; rdfs:subClassOf store:StoreItem ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( store:StoreItem ) ] .
+
+store:FreshProduce a owl:Class ; rdfs:subClassOf store:GroceryItem ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( store:GroceryItem ) ] .
+
+store:PackagedFood a owl:Class ; rdfs:subClassOf store:GroceryItem ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( store:GroceryItem ) ] .
+
+# DairyProduct/MeatProduct keep their isVegan/requiresRefrigeration requirements —
+# those were never the discriminating features under test (category/foodType/
+# produceType were); this is intentional, per the ablation's single-axis design.
+store:DairyProduct a owl:Class ; rdfs:subClassOf store:GroceryItem ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        store:GroceryItem
+        [ a owl:Restriction ; owl:onProperty store:isVegan ; owl:hasValue "false"^^xsd:boolean ]
+    ) ] .
+
+store:MeatProduct a owl:Class ; rdfs:subClassOf store:GroceryItem ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        store:GroceryItem
+        [ a owl:Restriction ; owl:onProperty store:isVegan ; owl:hasValue "false"^^xsd:boolean ]
+        [ a owl:Restriction ; owl:onProperty store:requiresRefrigeration ; owl:hasValue "true"^^xsd:boolean ]
+    ) ] .
+
+store:Fruit a owl:Class ; rdfs:subClassOf store:FreshProduce ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( store:FreshProduce ) ] .
+
+store:Vegetable a owl:Class ; rdfs:subClassOf store:FreshProduce ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( store:FreshProduce ) ] .
+
+#################################################################
+## Disjointness — REMOVED for the groups that lost their
+## discriminator (this is the fix). DairyProduct/MeatProduct keep
+## their disjointness from each other and from FreshProduce/
+## PackagedFood, since isVegan/requiresRefrigeration still
+## discriminate them from those two specifically — but
+## FreshProduce/PackagedFood are no longer disjoint from EACH
+## OTHER, and Fruit/Vegetable are no longer disjoint from each
+## other, and the four StoreItem-level siblings are no longer
+## mutually disjoint. Expected effect: objects grounded under
+## GroceryItem/StoreItem-level siblings, FreshProduce/PackagedFood,
+## and Fruit/Vegetable will show genuine multi-type ambiguous
+## grounding (Definition 3.6's non-chain-forming case); Dairy/Meat
+## classification remains comparatively reliable, which is itself
+## an informative, reportable contrast in Section 8.3 (not every
+## part of the ablated ontology fails equally, and that gradient is
+## worth showing rather than flattening into one aggregate number).
+#################################################################
+
+[] a owl:AllDisjointClasses ;
+   owl:members ( store:DairyProduct store:MeatProduct ) .

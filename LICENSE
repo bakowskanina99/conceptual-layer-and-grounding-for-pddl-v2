@@ -1,0 +1,54 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 the authors of "Goal-Dependent Grounding for LLM/VLM-to-PDDL
+Compilation via Formal Contracts"
+
+This work is licensed under the Creative Commons Attribution 4.0 International
+License (CC BY 4.0).
+
+You are free to:
+
+  Share — copy and redistribute the material in any medium or format
+  Adapt  — remix, transform, and build upon the material
+
+  for any purpose, even commercially.
+
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+
+Under the following terms:
+
+  Attribution — You must give appropriate credit, provide a link to the license,
+  and indicate if changes were made. You may do so in any reasonable manner, but
+  not in any way that suggests the licensor endorses you or your use.
+
+  No additional restrictions — You may not apply legal terms or technological
+  measures that legally restrict others from doing anything the license permits.
+
+Notices:
+
+  You do not have to comply with the license for elements of the material in the
+  public domain or where your use is permitted by an applicable exception or
+  limitation.
+
+  No warranties are given. The license may not give you all of the permissions
+  necessary for your intended use. For example, other rights such as publicity,
+  privacy, or moral rights may limit how you use the material.
+
+Full legal text: https://creativecommons.org/licenses/by/4.0/legalcode
+Human-readable summary: https://creativecommons.org/licenses/by/4.0/
+
+---
+
+Note on third-party data: `experiment-data/reference_labels.json` incorporates
+property values derived from Open Food Facts (https://world.openfoodfacts.org),
+which is separately licensed under the Open Database License (ODbL) for data and
+CC BY-SA for images. `experiment-data/images/obj_001.jpg`–`obj_023.jpg` are Open
+Food Facts' own product photographs and remain under Open Food Facts' CC BY-SA
+license, not this repository's CC BY 4.0 license. See `experiment-data/README.md`
+for the specific attribution requirements that apply to that subset of the data
+and images. This repository's own CC BY 4.0 license applies to everything else —
+code, proofs, worked example, results, documentation, and the 9 authors'-own
+photographs in `experiment-data/images/obj_024.jpg`–`obj_032.jpg` — and to the
+specific selection and arrangement of the Open Food Facts-derived values recorded
+in `reference_labels.json`, without superseding Open Food Facts' own license on
+the underlying database or images.

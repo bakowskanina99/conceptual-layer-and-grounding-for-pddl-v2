@@ -1,0 +1,461 @@
+[
+  {
+    "object_id": "obj_001",
+    "image_file": "obj_001.jpg",
+    "source": "open_food_facts",
+    "off_barcode": "4056489186267",
+    "reference_type": "Fruit",
+    "reference_properties": {
+      "category": "grocery",
+      "food_type": "fresh",
+      "veganAttributeMatch": 100,
+      "nutriscoreMatch": 82,
+      "calories": 52,
+      "price": null,
+      "produce_type": "fruit"
+    }
+  },
+  {
+    "object_id": "obj_002",
+    "image_file": "obj_002.jpg",
+    "source": "open_food_facts",
+    "off_barcode": "4069365990889",
+    "reference_type": "DairyProduct",
+    "reference_properties": {
+      "category": "grocery",
+      "food_type": "dairy",
+      "veganAttributeMatch": 0,
+      "nutriscoreMatch": 56,
+      "calories": 97,
+      "price": null
+    }
+  },
+  {
+    "object_id": "obj_003",
+    "image_file": "obj_003.jpg",
+    "source": "open_food_facts",
+    "off_barcode": "6111246950876",
+    "reference_type": "DairyProduct",
+    "reference_properties": {
+      "category": "grocery",
+      "food_type": "dairy",
+      "veganAttributeMatch": 0,
+      "nutriscoreMatch": null,
+      "calories": 58,
+      "price": null
+    }
+  },
+  {
+    "object_id": "obj_004",
+    "image_file": "obj_004.jpg",
+    "source": "open_food_facts",
+    "off_barcode": "5449000147417",
+    "reference_type": "PackagedFood",
+    "reference_properties": {
+      "category": "grocery",
+      "food_type": "packaged",
+      "veganAttributeMatch": null,
+      "nutriscoreMatch": 46,
+      "calories": 21,
+      "price": null
+    }
+  },
+  {
+    "object_id": "obj_005",
+    "image_file": "obj_005.jpg",
+    "source": "open_food_facts",
+    "off_barcode": "3274080005003",
+    "reference_type": "PackagedFood",
+    "reference_properties": {
+      "category": "grocery",
+      "food_type": "packaged",
+      "veganAttributeMatch": 100,
+      "nutriscoreMatch": 100,
+      "calories": null,
+      "price": null
+    }
+  },
+  {
+    "object_id": "obj_006",
+    "image_file": "obj_006.jpg",
+    "source": "open_food_facts",
+    "off_barcode": "3256229517844",
+    "reference_type": "MeatProduct",
+    "reference_properties": {
+      "category": "grocery",
+      "food_type": "meat",
+      "veganAttributeMatch": 0,
+      "nutriscoreMatch": 47,
+      "calories": 118,
+      "price": null
+    }
+  },
+  {
+    "object_id": "obj_007",
+    "image_file": "obj_007.jpg",
+    "source": "open_food_facts",
+    "off_barcode": "5908230533068",
+    "reference_type": "MeatProduct",
+    "reference_properties": {
+      "category": "grocery",
+      "food_type": "meat",
+      "veganAttributeMatch": null,
+      "nutriscoreMatch": 12,
+      "calories": 369,
+      "price": null
+    }
+  },
+  {
+    "object_id": "obj_008",
+    "image_file": "obj_008.jpg",
+    "source": "open_food_facts",
+    "off_barcode": "8480000511973",
+    "reference_type": "DairyProduct",
+    "reference_properties": {
+      "category": "grocery",
+      "food_type": "dairy",
+      "veganAttributeMatch": 0,
+      "nutriscoreMatch": 17,
+      "calories": 277,
+      "price": null
+    }
+  },
+  {
+    "object_id": "obj_009",
+    "image_file": "obj_009.jpg",
+    "source": "open_food_facts",
+    "off_barcode": "5000157062673",
+    "reference_type": "PackagedFood",
+    "reference_properties": {
+      "category": "grocery",
+      "food_type": "packaged",
+      "veganAttributeMatch": 0,
+      "nutriscoreMatch": 82,
+      "calories": 51,
+      "price": null
+    }
+  },
+  {
+    "object_id": "obj_010",
+    "image_file": "obj_010.jpg",
+    "source": "open_food_facts",
+    "off_barcode": "5000157062741",
+    "reference_type": "PackagedFood",
+    "reference_properties": {
+      "category": "grocery",
+      "food_type": "packaged",
+      "veganAttributeMatch": 50,
+      "nutriscoreMatch": 67,
+      "calories": 47,
+      "price": null
+    }
+  },
+  {
+    "object_id": "obj_011",
+    "image_file": "obj_011.jpg",
+    "source": "open_food_facts",
+    "off_barcode": "3184034250888",
+    "reference_type": "PackagedFood",
+    "reference_properties": {
+      "category": "grocery",
+      "food_type": "packaged",
+      "veganAttributeMatch": 100,
+      "nutriscoreMatch": 82,
+      "calories": 52,
+      "price": null
+    }
+  },
+  {
+    "object_id": "obj_012",
+    "image_file": "obj_012.jpg",
+    "source": "open_food_facts",
+    "off_barcode": "4300175489454",
+    "reference_type": "Vegetable",
+    "reference_properties": {
+      "category": "grocery",
+      "food_type": "fresh",
+      "veganAttributeMatch": 100,
+      "nutriscoreMatch": 86,
+      "calories": null,
+      "price": null,
+      "produce_type": "vegetable"
+    }
+  },
+  {
+    "object_id": "obj_013",
+    "image_file": "obj_013.jpg",
+    "source": "open_food_facts",
+    "off_barcode": "4088600186979",
+    "reference_type": "Vegetable",
+    "reference_properties": {
+      "category": "grocery",
+      "food_type": "fresh",
+      "veganAttributeMatch": 100,
+      "nutriscoreMatch": 85,
+      "calories": null,
+      "price": null,
+      "produce_type": "vegetable"
+    }
+  },
+  {
+    "object_id": "obj_014",
+    "image_file": "obj_014.jpg",
+    "source": "open_food_facts",
+    "off_barcode": "9335147000042",
+    "reference_type": "Vegetable",
+    "reference_properties": {
+      "category": "grocery",
+      "food_type": "fresh",
+      "veganAttributeMatch": 100,
+      "nutriscoreMatch": null,
+      "calories": null,
+      "price": null,
+      "produce_type": "vegetable"
+    }
+  },
+  {
+    "object_id": "obj_015",
+    "image_file": "obj_015.jpg",
+    "source": "open_food_facts",
+    "off_barcode": "7622300134532",
+    "reference_type": "PackagedFood",
+    "reference_properties": {
+      "category": "grocery",
+      "food_type": "packaged",
+      "veganAttributeMatch": 0,
+      "nutriscoreMatch": 9,
+      "calories": 560,
+      "price": null
+    }
+  },
+  {
+    "object_id": "obj_016",
+    "image_file": "obj_016.jpg",
+    "source": "open_food_facts",
+    "off_barcode": "50173822",
+    "reference_type": "PackagedFood",
+    "reference_properties": {
+      "category": "grocery",
+      "food_type": "packaged",
+      "veganAttributeMatch": null,
+      "nutriscoreMatch": 0,
+      "calories": 149,
+      "price": null
+    }
+  },
+  {
+    "object_id": "obj_017",
+    "image_file": "obj_017.jpg",
+    "source": "open_food_facts",
+    "off_barcode": "4056489011798",
+    "reference_type": "Fruit",
+    "reference_properties": {
+      "category": "grocery",
+      "food_type": "fresh",
+      "veganAttributeMatch": 100,
+      "nutriscoreMatch": 84,
+      "calories": 58,
+      "price": null,
+      "produce_type": "fruit"
+    }
+  },
+  {
+    "object_id": "obj_018",
+    "image_file": "obj_018.jpg",
+    "source": "open_food_facts",
+    "off_barcode": "01111323",
+    "reference_type": "Fruit",
+    "reference_properties": {
+      "category": "grocery",
+      "food_type": "fresh",
+      "veganAttributeMatch": 100,
+      "nutriscoreMatch": 81,
+      "calories": 70,
+      "price": null,
+      "produce_type": "fruit"
+    }
+  },
+  {
+    "object_id": "obj_019",
+    "image_file": "obj_019.jpg",
+    "source": "open_food_facts",
+    "off_barcode": "8713734033825",
+    "reference_type": "DairyProduct",
+    "reference_properties": {
+      "category": "grocery",
+      "food_type": "dairy",
+      "veganAttributeMatch": 0,
+      "nutriscoreMatch": 49,
+      "calories": 345,
+      "price": null
+    }
+  },
+  {
+    "object_id": "obj_020",
+    "image_file": "obj_020.jpg",
+    "source": "open_food_facts",
+    "off_barcode": "3560071563165",
+    "reference_type": "DairyProduct",
+    "reference_properties": {
+      "category": "grocery",
+      "food_type": "dairy",
+      "veganAttributeMatch": 0,
+      "nutriscoreMatch": 82,
+      "calories": 52,
+      "price": null
+    }
+  },
+  {
+    "object_id": "obj_021",
+    "image_file": "obj_021.jpg",
+    "source": "open_food_facts",
+    "off_barcode": "5057545430538",
+    "reference_type": "PackagedFood",
+    "reference_properties": {
+      "category": "grocery",
+      "food_type": "packaged",
+      "veganAttributeMatch": 50,
+      "nutriscoreMatch": 82,
+      "calories": 225,
+      "price": null
+    }
+  },
+  {
+    "object_id": "obj_022",
+    "image_file": "obj_022.jpg",
+    "source": "open_food_facts",
+    "off_barcode": "8421610357742",
+    "reference_type": "MeatProduct",
+    "reference_properties": {
+      "category": "grocery",
+      "food_type": "meat",
+      "veganAttributeMatch": 0,
+      "nutriscoreMatch": 85,
+      "calories": 144,
+      "price": null
+    }
+  },
+  {
+    "object_id": "obj_023",
+    "image_file": "obj_023.jpg",
+    "source": "open_food_facts",
+    "off_barcode": "4008366010387",
+    "reference_type": "MeatProduct",
+    "reference_properties": {
+      "category": "grocery",
+      "food_type": "meat",
+      "veganAttributeMatch": 0,
+      "nutriscoreMatch": 34,
+      "calories": 184,
+      "price": null
+    }
+  },
+  {
+    "object_id": "obj_024",
+    "image_file": "obj_024.jpg",
+    "source": "own_photo",
+    "reference_type": "HouseholdItem",
+    "reference_properties": {
+      "category": "household",
+      "is_hazardous": true,
+      "volume": null
+    },
+    "_note": "Star Drops 'The Pink Stuff' bathroom foam cleaner spray"
+  },
+  {
+    "object_id": "obj_025",
+    "image_file": "obj_025.jpg",
+    "source": "own_photo",
+    "reference_type": "HouseholdItem",
+    "reference_properties": {
+      "category": "household",
+      "is_hazardous": false,
+      "volume": null
+    },
+    "_note": "BARWA egg hair conditioner tube"
+  },
+  {
+    "object_id": "obj_026",
+    "image_file": "obj_026.jpg",
+    "source": "own_photo",
+    "reference_type": "ElectronicsItem",
+    "reference_properties": {
+      "category": "electronics",
+      "warranty_months": null,
+      "voltage": null
+    },
+    "_note": "Philips Hair Clipper (Family Clipper), corded"
+  },
+  {
+    "object_id": "obj_027",
+    "image_file": "obj_027.jpg",
+    "source": "own_photo",
+    "reference_type": "HouseholdItem",
+    "reference_properties": {
+      "category": "household",
+      "is_hazardous": true,
+      "volume": null
+    },
+    "_note": "Kropelka instant gel glue, 3g"
+  },
+  {
+    "object_id": "obj_028",
+    "image_file": "obj_028.jpg",
+    "source": "own_photo",
+    "reference_type": "HouseholdItem",
+    "reference_properties": {
+      "category": "household",
+      "is_hazardous": false,
+      "volume": null
+    },
+    "_note": "Plain grey ceramic mug"
+  },
+  {
+    "object_id": "obj_029",
+    "image_file": "obj_029.jpg",
+    "source": "own_photo",
+    "reference_type": "ClothingItem",
+    "reference_properties": {
+      "category": "clothing",
+      "size": null,
+      "material": "cotton blend"
+    },
+    "_note": "WOLCZANKA light blue dress shirt"
+  },
+  {
+    "object_id": "obj_030",
+    "image_file": "obj_030.jpg",
+    "source": "own_photo",
+    "reference_type": "ClothingItem",
+    "reference_properties": {
+      "category": "clothing",
+      "size": null,
+      "material": "ribbed knit"
+    },
+    "_note": "orsay burgundy ribbed knit dress"
+  },
+  {
+    "object_id": "obj_031",
+    "image_file": "obj_031.jpg",
+    "source": "own_photo",
+    "reference_type": "ClothingItem",
+    "reference_properties": {
+      "category": "clothing",
+      "size": "36",
+      "material": "woven (gingham check)"
+    },
+    "_note": "MOHITO black/white gingham blouse, size 36 visible on tag"
+  },
+  {
+    "object_id": "obj_032",
+    "image_file": "obj_032.jpg",
+    "source": "own_photo",
+    "reference_type": "ElectronicsItem",
+    "reference_properties": {
+      "category": "electronics",
+      "warranty_months": null,
+      "voltage": null
+    },
+    "_note": "Oral-B Pulsonic Slim Luxe 4000 electric toothbrush (Braun)"
+  }
+]
