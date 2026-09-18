@@ -1,86 +1,56 @@
-# Goal-Dependent Grounding for LLM/VLM-to-PDDL Compilation via Formal Contracts
+# Beyond Conjunctive Goals: A Three-Valued Constraint Language for Goal-Dependent Domain Restriction in Planning
 
-This repository is the companion to the paper:
+This repository is the companion to an ICAART Position Paper (2nd stage submission).
+Venue, year, and citation will be filled in after acceptance/publication.
 
-> Nina Bąkowska and Krzysztof Zatwarnicki. **"Goal-Dependent Grounding for LLM/VLM-to-PDDL
-> Compilation via Formal Contracts."** *[Venue, year — to be filled in after
-> acceptance/publication.]*
->
-> **Citation:** *[BibTeX / full citation to be added once the paper is published.]*
+The paper generalizes a goal-dependent restriction mechanism for planning domains —
+one that filters a typed conceptual system by relevance and, independently,
+contractual admissibility, before compilation to PDDL — from a flat conjunction of
+equality/threshold conditions to a genuine three-valued Boolean constraint language
+supporting disjunction, negation, and cross-feature linear conditions. It proves that
+the mechanism's core monotonicity guarantee survives this generalization, states the
+precise hypothesis (semantic entailment between constraint formulas) that replaces
+the original flat-set-containment hypothesis, and works a disjunctive and a
+cross-feature goal through a concrete hypermarket domain.
 
-The paper introduces a formal frame around PDDL — a conceptual system of typed contracts
-with a two-level, goal-dependent restriction mechanism (filtering by relevance and,
-independently, contractual admissibility) — proves that this restriction shrinks
-monotonically as a goal becomes more specific, and realises it in OWL 2 DL and SHACL. A
-pilot grounds this frame in 32 real photographs via a vision-language agent.
+## What's in this repository
 
-## What's in this repository, and why it's more than the paper
+**`extended-constraint-language/README.md`** — the full formal content: constraint
+atoms (simple and cross-feature), three-valued atom evaluation under partial
+observation, Kleene K3 semantics, the generalized goal/type-contract/consistency/
+admissibility definitions, the generalized monotonicity theorem with full proof, a
+worked disjunctive and cross-feature example, and two explicitly flagged open items
+(a scoping question in the type-level atom-evaluation clause, and the exact
+boundary of a computational-cost result borrowed from the literature). This is the
+paper's complete formal contribution — everything else below is background material
+the new definitions build on.
 
-**This repository contains material the paper only summarizes, compresses, or omits
-outright for space** — it is not a duplicate of the paper's content, and several files
-here exist specifically because the paper itself, at multiple points, points here rather
-than including the full version inline. Concretely:
+## Background material this paper's constraint language generalizes
 
-- Every proof the paper presents as a sketch (Theorem 4.1, Theorem 5.1, Lemma 4.1) or as
-  compressed prose (Corollary 4.1′, Corollary 4.1) has its **full, unabridged proof**
-  in `formal-proofs/`.
-- The paper's 12-item symbolic walkthrough appears only in illustrative fragments across
-  Sections 3–6; the **complete worked example** — full hierarchy, all 12 items, every
-  goal's full derivation, and the actual OWL/SHACL/PDDL artifacts it compiles to — is in
-  `worked-example/`.
-- Variant D (the ablation deliberately violating Assumption 3.1) is no longer discussed
-  in the paper's main text, cut for space during editing. Its prompt, ontology, and
-  **full empirical results** — the same level of detail an earlier draft's dedicated
-  Results subsection contained — are preserved in `agent-prompts/` and
-  `results/variant-D-ablation-full-results.md`. The paper's Limitations section points
-  here explicitly for these results.
-- The six deliberate differences between the symbolic walkthrough and the real pipeline
-  were originally their own table in the paper (`Section 7.3`), cut wholesale for space.
-  The full table is in `results/six-differences-table.md`.
-- The complete per-(variant, goal) breakdown — domain size, full accuracy categories,
-  SHACL agreement, Fast Downward figures, at the same detail as the original working
-  spreadsheet — is in `results/aggregate-tables.md`, of which the paper's own Table 5 is
-  a compressed, two-comparison subset.
+The definitions and theorem in `extended-constraint-language/` are a strict
+generalization of a base formalism — flat conjunctive goals, type contracts as
+required/forbidden feature-value pairs, and a two-level relevance/admissibility
+restriction mechanism — together with a hypermarket conceptual system used
+throughout to make that base formalism concrete. Both were developed and evaluated
+in a separate, prior line of work; they are retained here only as the necessary,
+self-contained background against which this paper's generalization is stated and
+checked, not as this paper's own contribution:
 
-## Folder-by-folder orientation
-
-**`formal-proofs/`** — Full, unabridged proofs for every result the paper states as a
-sketch or in compressed prose. Read alongside Sections 3–5 of the paper.
-
-**`worked-example/`** — The complete 12-item symbolic hierarchy, every goal's full
-derivation, and the machine-readable OWL/SHACL/PDDL artifacts that realize it. If you
-only read one thing here to understand how the formalism behaves concretely, read
-`worked-example/README.md`.
-
-**`pipeline/`** — The full, actually-run implementation: both compilers (Compiler-N for
-the naive baseline, Compiler-F's four stages for the ontology-aware variants), the
-OWL/SHACL realization, Ollama/Fast Downward orchestration, and the logging
-infrastructure. See `pipeline/README.md` for a file-by-file map to the paper's Sections
-5–7.
-
-**`agent-prompts/`** — The complete, verbatim prompt text for all four experimental
-variants (A/B/C/D), including Variant D's, which the paper's main text no longer
-discusses.
-
-**`experiment-data/`** — `reference_labels.json`, the ground-truth reference data for
-all 32 objects; `images/`, the actual 32 photographs shown to the vision-language
-agent; and full provenance notes distinguishing the 23 Open Food Facts-sourced
-grocery items (with their attribution requirements) from the 9 items that are the
-authors' own photographs.
-
-**`results/`** — The full 384-row experimental log (`results.jsonl`, all four variants),
-the complete aggregate-statistics breakdown, the full Variant D ablation write-up, and
-the six-differences table cut from the paper.
-
-**`docs/`** — `reproducing-the-experiment.md`: environment setup, how to run the
-pipeline end to end, how to regenerate `results/results.jsonl` and every derived figure
-from scratch, and how to recompile the paper itself.
-
-## Reproducing this work
-
-See [`docs/reproducing-the-experiment.md`](docs/reproducing-the-experiment.md) for a
-full step-by-step guide, from environment setup through regenerating every reported
-number and recompiling the paper.
+- **`formal-proofs/`** — the base formalism's full proofs (monotone domain shrinking,
+  the independence of relevance- and admissibility-exclusion, domain-size reduction),
+  referenced throughout `extended-constraint-language/README.md` as "Theorem 4.1",
+  "Lemma 4.1", etc.
+- **`worked-example/`** — the 11-type hypermarket hierarchy and 12-item occurrence
+  set that Section 3 of `extended-constraint-language/README.md` reuses for its
+  disjunctive and cross-feature goals, plus the machine-readable OWL/SHACL/PDDL
+  artifacts realizing it.
+- **`pipeline/`, `agent-prompts/`, `experiment-data/`, `results/`, `docs/`** — the
+  implementation, prompts, real photographic data, and results of an empirical pilot
+  of the *base* (flat-conjunction) mechanism. This Position Paper introduces no new
+  experiment of its own — it is a purely formal extension — so nothing here was
+  produced for it; it is included because the base formalism it generalizes is
+  defined relative to this same conceptual system and was itself empirically
+  evaluated using it.
 
 ## License
 
